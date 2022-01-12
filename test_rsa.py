@@ -26,11 +26,11 @@ class TestNumberTheory(unittest.TestCase):
 class TestRSA(unittest.TestCase):
     def test_encrypt_decrypt(self):
         rsa = RSA.generate(10)
-        plaintexts = [123456789, 17, 9999, 102930]
+        plaintexts = [123456789, 17, 9999, 102930] 
         for M in plaintexts:
             C = rsa.encrypt(M)
             MM = rsa.decrypt(C)
             self.assertEqual(M,MM)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2)
